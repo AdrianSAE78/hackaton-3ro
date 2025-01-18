@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    min-height: 100dvh;
+    scroll-behavior: smooth;
+}
+
+section {
+    box-sizing: border-box;
+    margin: 40px 80px;
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.posters {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    list-style: none;
+    overflow-x: scroll;
+    height: auto;
+    z-index: 2;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+
+.posters::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    background-color: transparent;
+}
+
+.posters::-webkit-scrollbar-thumb {
+    background: #d6d6d6;
+    border-radius: 10px;
+}
+
+.posters::-webkit-scrollbar-thumb:hover {
+    background: #a2a2a2;
+}
+
+.movie-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    >img {
+        border-radius: 15px;
+        transition: all 0.3s ease;
+
+        &:hover {
+            scale: 1.1;
+        }
+    }
+    
+    >h2 {
+        height: 100%;
+        margin-top: 15px;
+    }
+}
+
+.rating-circle {
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+}
+
+.progress-ring {
+    transform: rotate(-90deg);
+    overflow: visible;
+}
+
+.progress-ring__background {
+    fill: none;
+    stroke: #e6e6e6;
+    stroke-width: 6;
+}
+
+.progress-ring__circle {
+    fill: none;
+    stroke: #00ff00;
+    stroke-width: 6;
+    stroke-dasharray: 220;
+    transition: stroke-dashoffset 0.5s ease;
+}
+
+.rating-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+}
